@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- создаем запрос-->
+    <h2>Добавление нового продукта</h2>
+    <form method="post">
+        <label>
+            <p>Название продукта</p>
+            <input type="text" name="name" placeholder="Велосипед...">
+        </label>
+        <label>
+            <p>Цена</p>
+            <input type="number" min="0" name="price" placeholder="10 000">
+        </label>
+        <label>
+            <p>Кол-во</p>
+            <input type="number" min="0" max="10" name="count" placeholder="   < 10">
+        </label>
+        <label>
+            <p>Категория</p>
+            <select name="category">
+                <option value="sport">спорт</option>
+                <option value="house">дача</option>
+                <option value="home">дом</option>
+                <option value="hobby">хобби</option>
+                <option value="gift">подарки</option>
+            </select>
+        </label>
+        <label>
+            <p>Описание</p>
+            <textarea name="description" placeholder="Расскажите о товаре"></textarea>
+        </label>
+        <button>Отправить</button>
+    </form>
+
+    <!-- 
+        создать форму аутентификации
+        у данной формы должны быть 2 поля ввода (логин и пароль)
+        и кнопка отправки формы
+     -->
+    <h2>Аутентификация</h2>
+    <form>
+        <label>
+            <p>Имя пользователя</p>
+            <input type="text" name="name" placeholder="укажите имя">
+        </label>
+        <label>
+            <p>Пароль</p>
+            <input type="password" name="password" placeholder="укажите пароль">
+        </label>
+        <button>Войти</button>
+    </form>
+
+    <h2>POST запрос</h2>
+    <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="body">
+        <input type="number" name="userId" placeholder="userId">
+        <button>Отправить</button>
+    </form>
+
+</body>
+
+</html>
