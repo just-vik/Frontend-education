@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #39667b;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.main .links img{
+    color: #e0a65a;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+
+
+
+
+.mail{
+    background-color: #39667b;
+    color: white;
+    text-align: center;
+   
+}

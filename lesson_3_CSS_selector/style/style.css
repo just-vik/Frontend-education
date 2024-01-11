@@ -1,0 +1,75 @@
+.topic h2 {
+  color: #8c7ae6;
+}
+
+.topic {
+  color: #718093;
+  background-color: #dcdde1;
+  border: 2px solid #8c7ae6;
+  border-radius: 10px;
+}
+
+.deals {
+  background-color: #34495e;
+}
+
+.deals h2{
+    color: #1abc9c;
+    font-size: 35px;
+}
+
+.deals li {
+  color: #ecf0f1;
+  font-size: 30px;
+  border: 2px solid black;
+  width: 300px;  
+}
+
+.deals .links{
+    border: 2px solid #ecf0f1;
+}
+
+.deals .links a{
+    color: #ecf0f1;
+}
+
+.deals .links img{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+/* 
+1. Задать цвет заднего фона для раздела с расписанием #34495e
+2. Задать цвет текста пунктов в списке #ecf0f1 
+3. Задать заголовку размер шрифта 35
+и цвет текста #1abc9c
+*/
+
+
+
+
+
+.text {
+  border: 2px solid black;
+  width: 200px;  
+}
+
+.link {
+  border: 2px solid black;
+}
+
+
+
+
+
+
+
+
+
+/* 
+стили, связанные с текстом наследуется
+стили, не связанные с текстом не наследуются
+*/
