@@ -1,0 +1,70 @@
+/* обнуление стилей в браузере- убрать отступы по умолчанию */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.pages{
+    padding: 50px 30px;
+}
+
+#main-info {
+  background-color: #ecf0f1;
+}
+
+  #main-info h1 {
+    margin-bottom: 50px;
+  }
+
+#main-info .images {
+  border: 2px solid black;
+  padding: 20px;
+  margin: 50px;
+  width: 600px;
+  background-color: white;
+}
+
+
+#main-info .images img {
+  width: 150px;
+  height: 150px;
+  margin: 0 20px;
+  border-radius: 30px;
+  object-fit: unset;
+}
+
+#health{
+    background-color: #20cfac;
+}
+
+#health img{
+    height: 400px;
+    margin: 50px 0;
+}
+
+#health p{
+    width: 400px;
+}
+
+#types{
+    background-color:beige;
+}
+
+#types ul{
+    
+    padding: 40px;
+    /* list-style: none; */
+    list-style-image: url("../media/fire.png");
+}
+
+#types li{
+    margin: 10px 0;
+    
+}
+
+
+
+/* 
+когда ставится класс то ставится .  
+когда ставится идентификатор то ставится # (используется только один раз)
+*/
