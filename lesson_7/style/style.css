@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  max-width: 1110px;
+  margin: 0 auto; /* отцентровали блочный элемент (по горизонтали auto) */
+  padding: 0 20px;
+}
+
+#projects {
+  /* сделали отступы всего блока НАШИ САМЫЕ БОЛЬШИЕ ПРОЕКТЫ */
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#projects .project-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+#projects .project {
+  width: 350px;
+}
+
+#projects .project img {
+  width: 100%;
+  height: 380px;
+}
+
+#projects .project hr {
+  border-top: 6px solid #f7654a;
+  width: 55px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+
+#projects .project p {
+  color: #999999;
+  margin-top: 20px;
+}
+
+#activity {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#activity .activity-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+#activity .activity-item {
+  background-color: #f7f7f7;
+  width: 350px;
+  height: 250px;
+  /* Используем Flexbox для организации дочерних элементов в столбцовом направлении */
+  display: flex;
+  /* Размещаем дочерние элементы в столбцовом направлении (сверху вниз) */
+  flex-direction: column;
+  /* Выравниваем дочерние элементы по вертикали внутри контейнера */
+  justify-content: center;
+  /* Выравниваем дочерние элементы по горизонтали внутри контейнера */
+  align-items: center;
+  /* Устанавливаем промежуток в 30 пикселей между дочерними элементами */
+  gap: 30px;
+}
+
+#activity .activity-item p {
+  width: 50%;
+  text-align: center;
+}
+
+#contacts {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#contacts .contact-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contacts .contact-item {
+  width: 255px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+#contacts .contact-item p {
+  width: 60%;
+  text-align: center;
+ 
+}
+
+#contacts h3 {
+  color: #999999;
+}
+
+.contact-item .color {
+  color: #f7654a;
+}
