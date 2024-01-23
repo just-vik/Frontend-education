@@ -17,6 +17,10 @@ const employees = [
 ];
 
 console.log("=======Удвоение зарплаты======");
+// const task_1 = employees.map(employee => {
+//   employee.salary *= 2;
+//   return employee
+// })
 const x2Salary = employees.map(({ name, salary }) => ({name, salary: salary * 2}));
 console.log(x2Salary);
 
@@ -29,6 +33,11 @@ const totalSalary = employees.reduce((acc, employee) => acc + employee.salary, 0
 console.log(totalSalary);
 
 console.log("=======Имена в верхнем регистре======");
+//В данном случае, вы используете синтаксис объектного литерала 
+//для создания объекта {name: name.toUpperCase(), salary}, 
+// и затем оборачиваете этот объект в круглые скобки ({...}). 
+// Это делается для явного указания, что содержимое внутри круглых скобок 
+// представляет собой значение, которое должно быть возвращено из стрелочной функции.
 //const upperCase = employees.map(({ name, salary }) => ({name: name.toUpperCase(), salary}));
 
 //через spread
