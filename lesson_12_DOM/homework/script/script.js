@@ -15,18 +15,18 @@ const elem = document.querySelector("p");
 elem.innerText = "Привет, JavaScript!";
 
 console.log("====Добавление нового элемента в DOM=====");
-function numList(array) {
-  const container = document.createElement("ol");
-  array.forEach((elem) => {
-    const item = document.createElement("li");
-    item.textContent = elem;
-    container.append(item);
-  });
-  const root = document.querySelector("#root");
-  root.append(container);
-}
 const strings = ["Toyota", "Honda", "Ford", "Chevrolet", "BMW"];
-numList(strings);
+function getList(array) {
+  const olNode = document.createElement("ol");
+  array.forEach((word) => {
+    const liElem = document.createElement("li");
+    liElem.innerText = word;
+    olNode.append(liElem);
+  });
+  return olNode;
+}
+const root = document.querySelector("#root");
+root.append(getList(strings));
 
 console.log("====Создание ссылок_upgrade version=====");
 const autoArray = [
@@ -50,3 +50,14 @@ function links(array) {
   links.append(container);
 }
 links(autoArray);
+
+
+function getLinksBlock(array){
+  const container = document.createElement("div");
+  array.forEach(({label, link})=>{
+    const linkNode =document.createElement("a");
+  })
+}
+
+
+

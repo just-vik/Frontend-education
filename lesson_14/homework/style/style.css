@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#userForm {
+  max-width: 60%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+
+#userForm label {
+  margin-top: 10px;
+}
+
+#userForm input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+}
+
+#userForm button {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: limegreen;
+}
+
+.user {
+  margin-top: 20px;
+}
+
+.user p {
+  margin: 5px 0;
+}
