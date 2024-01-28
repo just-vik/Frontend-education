@@ -9,7 +9,34 @@
 </head>
 
 <body>
+    <form id="addForm">
 
+        <!-- Форма для ввода информации о задаче -->
+        <label class="field">
+            <!-- Инструкция для ввода названия дела -->
+            <p>Название дела:</p>
+            <!-- Поле ввода текста -->
+            <input name="title" type="text">
+        </label>
+
+        <label class="field">
+            <!-- Инструкция для выбора приоритета задачи -->
+            <p>Приоритет:</p>
+            <!-- Выпадающий список (select) для выбора приоритета -->
+            <select name="priority">
+                <option value="0">Low</option>
+                <option value="1">Medium</option>
+                <option value="2">High</option>
+            </select>
+        </label>
+
+        <!-- Кнопка для добавления задачи -->
+        <button>Добавить</button>
+
+    </form>
+    <div id="todosContainer"></div>
+
+    <!-- <div class="target"></div> -->
 
     <script src="script/script.js"></script>
 </body>
