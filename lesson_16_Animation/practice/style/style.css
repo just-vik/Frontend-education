@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+.target {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+
+  /* transition - стили которые анимируем */
+  transition: background-color, width;
+  /* transition-duration - продолжительносить */
+  transition-duration: 0.5s;
+  /* transition-timing-function  - функция анимации */
+  transition-timing-function: cubic-bezier(0.26, -0.66, 0.53, 1.46);
+}
+/*
+ реализуйте процесс, который при наведении на target
+ изменит его ширину на 400px 
+ */
+
+/* указания псевдокласса - отрабатывает при наведении курсора */
+.target:hover {
+  background-color: darkcyan;
+  width: 600px;
+}
+
+.topic {
+  margin: 50px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+  position: relative;
+  /* скрывать все выходящие дочерние элементы по "y" */
+  overflow-y: hidden;
+  /* добавляем тень карточки */
+  box-shadow: 5px 5px 15px blue;
+  transition: box-shadow 0.5s;
+}
+
+.topic:hover {
+  box-shadow: 5px 5px 25px rebeccapurple;
+}
+
+.topic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.topic .description {
+  /* распологаем элемент относительно .topic  */
+  position: absolute;
+  background-color: rgba(235, 240, 241, 0.8);
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 5px;
+  /* сдвигаем текст на корпус вниз */
+  transform: translateY(100%);
+  /* анимация процесса */
+  transition: transform 0.5s;
+  /* задержка анимации */
+  transition-delay: 1.2s;
+}
+
+.topic:hover .description {
+  transform: translateY(0);
+
+  /* задержка анимации */
+  transition-delay: 0.2s;
+}

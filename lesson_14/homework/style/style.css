@@ -5,7 +5,7 @@
 }
 
 #userForm {
-  max-width: 60%;
+  max-width: 700px;
   border: 2px solid black;
   margin: 20px auto;
   padding: 10px;
@@ -32,13 +32,20 @@
   background-color: limegreen;
 }
 
-.user {
-  font-family: Arial, Helvetica, sans-serif;
-  color: brown;
-  margin-top: 20px;
-
+.userContainer {
+  max-width: 700px;
+  border: 2px solid black;
+  margin: 10px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* .user p {
-  margin: 5px 0;
-} */
+.user_item {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
