@@ -27,6 +27,7 @@
   object-fit: contain;
   transition:cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-duration: 1.5s;
+  transition: transform 0.5s;
 }
 
 .topic:hover img {
@@ -35,6 +36,7 @@
   object-fit: cover;
   box-shadow: 5px 5px 25px rgb(124, 107, 141);
   border: 2px solid black;
+  transform: rotate(360deg);
 }
 
 .topic .description {
