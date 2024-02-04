@@ -13,11 +13,11 @@ function updateImage() {
     imageNode.src = images[currentIndex];
 }
 btnPrev.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    currentIndex = (--currentIndex + images.length) % images.length;
     updateImage();
 });
 btnNext.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
+    currentIndex = ++currentIndex % images.length;
     updateImage();
 });
 
