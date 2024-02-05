@@ -1,24 +1,30 @@
 
 const button = document.querySelector('#target button');
 const paragraph = document.querySelector('#target p');
-
+const messages = [
+    "1text",
+    "2text",
+    "3text",
+]
+let index = 0;
 button.addEventListener('click', () => {
-    paragraph.textContent = 'Привет, мир!';
+    paragraph.innerText = messages[index
+        % messages.length];
+    index++;
 });
 
 
 const formNode = document.querySelector('#form');
 formNode.addEventListener('submit', event => {
     event.preventDefault();
-    const valueNode = document.querySelector('#value').value;
-    console.log(valueNode);
+    const message = event.target.message.value;
+    console.log(message);
+    event.target.reset()
 });
 
 
-function randomNumber() {
-    const button = document.querySelector('#random button');
-    const number = Math.floor(Math.random() * 11) + 5;
-    button.innerText = number;
-}
-
-
+const randomBtnNode = document.querySelector(".random_btn")
+randomBtnNode.addEventListener("click", event => {
+    const value = Math.round(Math.random() * 10 + 5);
+    event.target.innerText = value;
+})
