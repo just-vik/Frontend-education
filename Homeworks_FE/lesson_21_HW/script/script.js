@@ -1,4 +1,3 @@
-
 const addProductNode = document.querySelector("#add_product");
 let products = [];
 
@@ -9,44 +8,66 @@ addProductNode.addEventListener("submit", event => {
     const count = +event.target.count.value;
     const product = { title, price, count };
     products.push(product);
-    event.target.reset();
     rerender();
-});
+    event.target.reset();
+})
 
-function createProductCard(title, price, count) {
-    const containerNode = document.createElement('div');
-    containerNode.classList.add("product_cart")
-    const titleNode = document.createElement('p');
-    const priceNode = document.createElement('p');
-    const countNode = document.createElement('p');
+
+function createProductCart(title, price, count) {
+    const containerNode = document.createElement("div");
+    const titleNode = document.createElement("p");
+    const priceNode = document.createElement("p");
+    const countNode = document.createElement("p");
+    const deleteNode = document.createElement("button");
+    const changeCountContainer = document.createElement("div");
+    const incrCount = document.createElement("button");
+    const decrCount = document.createElement("button");
+    changeCountContainer.append(incrCount, decrCount);
+    incrCount.innerText = "+";
+    decrCount.innerText = "-";
+    incrCount.classList.add("qtyBtn")
+    decrCount.classList.add("qtyBtn")
+    deleteNode.classList.add("btnNode")
+
+
+    incrCount.addEventListener("click", () => {
+        const currentProduct = products.find(product => product.title === title);
+        currentProduct.count++;
+        rerender();
+    })
+
+    decrCount.addEventListener("click", () => {
+        const currentProduct = products.find(product => product.title === title);
+        if (count === 0) {
+            return;
+        }
+        currentProduct.count--;
+        rerender();
+    })
+
+    containerNode.classList.add("product_cart");
+    containerNode.style.borderColor = count === 0 ? "#c0392b" : "#16a085";
     titleNode.innerText = title;
     priceNode.innerText = price;
-    countNode.innerText = count;
-
-    const btnNode = document.createElement('button');
-    btnNode.classList.add("btnNode")
-    btnNode.innerText = "удалить";
-    btnNode.addEventListener("click", () => remove(title));
-
     countNode.innerText = count === 0 ? "Товар кончился" : count;
-    containerNode.style.backgroundColor = count === 0 ? "#fab1a0" : "#55efc4";
+    deleteNode.innerText = "Удалить";
+    containerNode.append(titleNode, priceNode, countNode, changeCountContainer, deleteNode);
 
-    const plusBtn = document.createElement('button');
-    plusBtn.classList.add("qtyBtn")
-    plusBtn.innerText = '+';
-    plusBtn.addEventListener("click", () => {
-        updateQty(title, count + 1);
-    });
+    deleteNode.addEventListener("click", () => remove(title));
 
-    const minusBtn = document.createElement('button');
-    minusBtn.classList.add("qtyBtn")
-    minusBtn.innerText = '-';
-    minusBtn.addEventListener("click", () => {
-        updateQty(title, Math.max(count - 1, 0));
-    });
-
-    containerNode.append(titleNode, priceNode, countNode, plusBtn, minusBtn, btnNode);
     return containerNode;
+}
+
+function rerender() {
+    const productsNode = document.querySelector(".products");
+    productsNode.innerText = "";
+    if (products.length === 0) {
+        const messageNode = document.createElement("p");
+        messageNode.innerText = "Товаров нет";
+        productsNode.append(messageNode);
+    } else {
+        products.forEach(({ title, price, count }) => productsNode.append(createProductCart(title, price, count)));
+    }
 }
 
 function remove(title) {
@@ -55,23 +76,7 @@ function remove(title) {
     rerender();
 }
 
-function updateQty(title, newQty) {
-    const productUpdate = products.find(product => product.title === title);
-    if (productUpdate) {
-        productUpdate.count = newQty;
-        rerender();
-    }
-}
+rerender();
 
-function rerender() {
-    const productsNode = document.querySelector('.products');
-    productsNode.innerText = "";
-    if (products.length === 0) {
-        const noProductsNode = document.createElement('p');
-        noProductsNode.innerText = 'Товаров нет';
-        productsNode.append(noProductsNode);
-    } else {
-        products.forEach(({ title, price, count }) => productsNode.append(createProductCard(title, price, count)));
-    }
-}
+
 
