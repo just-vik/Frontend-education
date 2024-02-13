@@ -1,19 +1,20 @@
-import { title } from "process";
+
 import React, { useState } from "react"
 
 export default function AddProduct() {
 
-    type Product = {
+    type FormDataType = {
         title: string,
-        price: number,
-        count: number
+        price: string,
+        count: string
     };
 
-    const [formData, setFormData] = useState<Product>({ title: "", price: 0, count: 0 });
+    const [formData, setFormData] = useState<FormDataType>({ title: "", price: "", count: "" });
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        formData["title"] = event.target.value;
-        setFormData({ ...formData });
+        const { value, name } = event.target;
+        const newData: FormDataType = { ...formData, [name]: value };
+        setFormData(newData)
         console.log(formData);
     }
 
@@ -27,8 +28,8 @@ export default function AddProduct() {
             <p>Form for adding a product:</p>
             <form onSubmit={submitHandler}>
                 <input value={formData.title} type="text" name="title" placeholder="title" onChange={changeHandler} />
-                <input type="text" name="price" placeholder="price" />
-                <input type="text" name="count" placeholder="count" />
+                <input value={formData.price} type="number" name="price" placeholder="price" onChange={changeHandler} />
+                <input value={formData.count} type="number" name="count" placeholder="count" onChange={changeHandler} />
                 <button>Add</button>
             </form>
         </div>
